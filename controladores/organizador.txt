@@ -1,0 +1,63 @@
+criar conta
+    validarConta
+        validarNome
+        validarCpf
+        validarEmail
+
+atualizarUsuarioConta
+    validarNumeroConta
+    validarAtualizacao
+    validarDadoAtualizacao
+        validarNome
+        validarCpf
+        validarEmail
+    *const indexConta
+    *if indexConta
+
+excluirConta
+    validarNumeroConta
+    *const indexConta
+    *if indexConta
+    *if (dados.contas[indexConta].saldo !== 0) Ainda há saldo
+
+
+//TRANSAÇÕES
+
+depositar
+    validarNumeroConta
+    * if (!Number(req.body.valorDeposito) > 0) Tem que ser positivo
+    *const indexConta
+    *if indexConta
+
+sacar
+    validarNumeroConta
+    *const indexConta
+    *if indexConta
+    *if (!Number(req.body.valorSaque) Tem que ser positivo
+    *if (!req.body.senha)
+    *if (req.body.senha !== dados.contas[indexConta].usuario.senha)
+    *if (dados.contas[indexConta].saldo < Number(req.body.valorSaque)) Saldo suficiente?
+
+transferir
+    validarNumeroContaOrigem
+    validarNumeroContaDestino
+    *const indexContaOrigem/Destino
+    *of indexContaOrigem/Destino
+    *if (!req.body.senha)
+    *if (req.body.senha !== dados.contas[indexContaOrigem].usuario.senha)
+    *if (dados.contas[indexContaOrigem].saldo < Number(req.body.valorTransferencia) Saldo suficiente?
+    *if (!Number(req.body.valorTransferencia) Tem que ser positivo
+
+saldo
+    validarNumeroContaNoQuery
+    *const indexConta
+    *if indexConta
+    *if (!req.query.senha)
+    *if (req.query.senha !== dados.contas[indexConta].usuario.senha)
+
+extrato
+    validarNumeroContaNoQuery
+    *const indexConta
+    *if indexConta
+    *if (!req.query.senha)
+    *if (req.query.senha !== dados.contas[indexConta].usuario.senha)
